@@ -29,8 +29,14 @@
     <script src="./assets/libs/parsley.min.js" type="text/javascript"></script>
     <script src="https://www.parsecdn.com/js/parse-1.6.5.min.js"></script>
     <script type="text/javascript">
-       $(function(){
+   	$(function(){
+   			$('button#btn').click(function(){
+		        console.log(reqEmail);
+		});
 
+   	})
+    	
+       $(function(){
            Parse.$ = jQuery;
            Parse.initialize("6dlJGFlCY3dDn3cNU9d1HPKrvWzA6GhitE7FEYdt", "ac9lE4l7tMzwMfwe5xDwFVRSCDXtcNFXTYr6zzfe");
            if (Parse.User.current()) {
@@ -58,7 +64,7 @@
                                 var title = cert.get("title");
                                 var comments = cert.get("comments");
                                 var imageURL = cert.get("certificate").toJSON().url;
-                                console.log(title); 
+                                //console.log(title); 
                                 $('#certificatesCollapse').append("<div class=\"panel panel-default\"> \
                                     <div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"> \
                                               <h4 class=\"panel-title\"> \
@@ -75,6 +81,40 @@
                                 
                             }
                             $('#certificatesCollapse').collapse('hide');
+                        },
+                        error: function(error) {
+                            console.log(error);
+                        }
+                    });
+					
+					//Load Profile View Requests
+					var ProfileViewRequests = Parse.Object.extend("ProfileViewRequests");
+                    var query = new Parse.Query(ProfileViewRequests);
+                    query.equalTo('userProfile',user);
+                     
+                    query.find({
+                        success: function(requests) {
+                        		$('#ProfileViewRequests').html("<table id=\"profileViewRequestTable\" class=\"table table-hover table-bordered\"> \
+                                	<tr><th>Name</th><th>Email</th><th>Action</th></tr>");
+                            for (var i = 0; i < requests.length; i++) {
+                                var req = requests[i];
+                                var objId = req.id;
+                                var requestName = req.get("requestName");
+                                var requestEmail = req.get("requestEmail");
+                                console.log(requestName+requestEmail+objId); 
+                                $('#profileViewRequestTable').append('<tr><td>'+requestName+'</td><td>'+requestEmail+'</td><td> \
+                                	<form style=\"display:inline\" action=\"accept-request\" method=\"POST\"> \
+                                	<input type=\"hidden\" name=\"name\" value=\"'+requestName+'\"> \
+                                	<input type=\"hidden\" name=\"email\" value=\"'+requestEmail+'\"> \
+                                	<button type=\"submit\"><i class=\"fa fa-check\"></i></button> \
+                                	</form> &nbsp;&nbsp; \
+                                	<form style=\"display:inline\" action=\"reject-request\" method=\"POST\"> \
+                                	<input type=\"hidden\" name=\"name\" value=\"'+requestName+'\"> \
+                                	<input type=\"hidden\" name=\"email\" value=\"'+requestEmail+'\"> \
+                                	<button type=\"submit\"><i class=\"fa fa-times\"></i></button> \
+                                	</form>');
+       						}
+                            $('#ProfileViewRequests').append("</table>");
                         },
                         error: function(error) {
                             console.log(error);
@@ -209,6 +249,17 @@
                                  <i class="fa fa-github fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-stack-overflow fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-linkedin-square fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-facebook fa-2x"></i>&nbsp;<i class="fa fa-twitter fa-2x"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-google-plus fa-2x"></i> 
                         </div>
                     
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                           <div class="page-header">
+                           <hr>
+                              <h4><strong>Profile View Requests</strong></h4>
+                              <div id="ProfileViewRequests" class="text-center">
+                              	<i class="fa fa-circle-o-notch fa-spin fa-4x text-center" style="color:green;display:block"></i>
+                              </div>
+                            </div> 
+                        </div>
                     </div>
                 </div> 
             </div>

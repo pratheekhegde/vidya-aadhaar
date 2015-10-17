@@ -74,6 +74,21 @@ $app->notFound(function () use ($app) {
     $app->render('404.html');
 });
 
+$app->post('/accept-request', function () use ($app) {
+		$requestName = $app->request()->post('name');
+		$requestEmail = $app->request()->post('email');
+		echo $requestEmail;
+		echo $requestName;
+		//[TODO] Connect to parse database and send email to the above user the uniquely generated link.
+});
+
+$app->post('/reject-request', function () use ($app) {
+		$requestName = $app->request()->post('name');
+		$requestEmail = $app->request()->post('email');
+		echo $requestEmail;
+		echo $requestName;
+		//[TODO] Connect to parse database and send email to the above user the uniquely generated link.
+});
 $app->run();
 
 ?>
