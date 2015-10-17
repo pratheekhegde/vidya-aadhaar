@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vidya Aadhaar</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Login</title>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/libs/typed.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <style type="text/css">
+    body{
+    	padding-top:100px;
+    	font-family: 'Droid Sans', sans-serif;
+    }
+    .circle{
+	    margin: 24px auto;
+	    width: 120px;
+	    height: 120px;
+	    padding: 40px 0 0;
+	    border-radius: 50%;
+	    border: 1px solid blue;
+	    z-index: 10;
+	    position: relative;
+	    font-size: 20px;
+    }
+    .squarebox {
+        position: relative;
+        padding: 15px;
+        background-color: white;
+        border: 1px solid #DDD;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        border-color: orange;
+    }
+    .no-padding{
+    	padding:0px;
+    }
+    .features h3 {
+    	margin-top: 0px;
+    	color:#006064;
+    }
+    .features p {
+    	color:#4d525a;
+    }
+    header {
+	    z-index: 800;
+	    border-bottom: 1px solid #dae0e7;
+	    background: rgba(255,255,255,.97);
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	}
+	.typed-cursor{
+	    opacity: 1;
+	    -webkit-animation: blink 0.7s infinite;
+	    -moz-animation: blink 0.7s infinite;
+	    animation: blink 0.7s infinite;
+	}
+	@keyframes blink{
+	    0% { opacity:1; }
+	    50% { opacity:0; }
+	    100% { opacity:1; }
+	}
+	@-webkit-keyframes blink{
+	    0% { opacity:1; }
+	    50% { opacity:0; }
+	    100% { opacity:1; }
+	}
+	@-moz-keyframes blink{
+	    0% { opacity:1; }
+	    50% { opacity:0; }
+	    100% { opacity:1; }
+	}
+    </style>
+    <script type="text/javascript">
+   	$(function(){
+   		$('#navbarTop a[href="#features"]').on('click', function(e) {
+		   e.preventDefault();
+		   $('html, body').animate({
+		        scrollTop: $("#features").offset().top-86	
+		     }, 300);
+		});
+
+		//TypedJS
+		$("#tagline").typed({
+        strings: ["Are You Ready For The Digital India ..."],
+        typeSpeed: 30
+      });
+
+   	})
+    
+    </script>
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="90">
+  <nav class="navbar navbar-default navbar-fixed-top" id="navbarTop">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+           <img class="navbar-brand" style="height:80px;padding:10px" src="./assets/images/brand.png" height="100px"/>
+          <a class="navbar-brand" style="height:80px;" href="./"><span class="h3"><font color="#70b246">Vidya</font><br><font color="#f37c21">Aadhaar</font></span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+		    <li><a href="#features"><h3>Features</h3></a></li>
+		    <li><a href="#"><h3>Search</h3></a></li>
+		    <li><a href="#"><h3>Contact</h3></a></li>
+		    <li><a href="#"><h3>About Us</h3></a></li>
+		    <li><a href="./login" class="btn btn-success btn-lg center-block" style="margin-top:23px">Login</a></li>
+		  </ul>
+           
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <!-- TypedJS -->
+    <div class="container">
+    <div class="row">
+    	<div class="col-md-8 col-md-offset-2 text-center">
+    		<h1><span id="tagline"></span></h1>
+    	</div>
+    </div>
+    </div>
+    <div class="jumbotron" style="background-color:#fff;margin-bottom:0px">
+      <div class="container">
+        <div class="row">
+        	<div class="col-md-8">
+        		<!--carousel -->
+        		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				  </ol>
+
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				      <img src="./assets/images/carousel/home1.jpg" alt="...">
+				      <div class="carousel-caption">
+					    <h4 style="color:brown">India's most used Aadhar ID is now going to be the key to all the digital information about you.</h4>
+					  </div>
+				    </div>
+				    <div class="item">
+				      <img src="./assets/images/carousel/home2.jpg" alt="...">
+				      <div class="carousel-caption">
+				        <h4 style="color:brown">Everybody with an Aadhar Id is a part of the system.</h4>
+				      </div>
+				    </div>
+				    <div class="item">
+				      <img src="./assets/images/carousel/home3.jpg" alt="...">
+				      <div class="carousel-caption">
+				        <h4 style="color:brown">As a part of digital India, inorder to empower the next generation with a unique digital profile.</h4>
+				      </div>
+				    </div>
+				    </div>
+				  <!-- Controls -->
+				  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+        	</div>
+        	<div class="col-md-4 text-center">
+        		<img src="./assets/images/logo.png" width="300px" class="center-block">
+        		<a href="#" class="btn btn-info btn-lg" style="margin:15px">Click here to Join</a>
+        		
+        	</div>
+        </div>
+      </div>
+    </div> 
+    <div class="row features" id="features" style="background-color:#e6eaef;color:#fff;margin:0px">
+    	<div class="col-md-10 col-md-offset-1" style="margin-top:48px;margin-bottom:48px">
+    		<div class="row">
+    			<div class="col-md-2">
+    				<img src="./assets/images/features/key.png">
+    			</div>
+    			<div class="col-md-4">
+    				<h3>Aadhar - The key to your Digital Profile.</h3>
+    				<p>India's most used Aadhar ID is now going to be the key to all the digital information about you.
+    				</p>
+    			</div>
+    			<div class="col-md-2">
+    				<img src="./assets/images/features/repository.png">
+    			</div>
+    			<div class="col-md-4">
+    				<h3>A Central Repository for all your certificates.</h3>
+    				<p>All your documents are securely stored online in our servers. No more carrying your certificates for
+    				applying jobs or for any other purposes.</p>
+    			</div>
+    		</div>
+    		<div class="row" style="padding-top:48px;">
+    			<div class="col-md-2">
+    				<img src="./assets/images/features/recruit.png">
+    			</div>
+    			<div class="col-md-4">
+    				<h3>Recruiters can now use your Digital Profile.</h3>
+    				<p>Your Digital Profile can be used to apply for jobs instead of your paper CV. You are notified if a recruiter vistits your Digital Profile. 
+    				</p>
+    			</div>
+    			<div class="col-md-2">
+    				<img src="./assets/images/features/access.png">
+    			</div>
+    			<div class="col-md-4">
+    				<h3>Access your Digital Profile Anytime, Anywhere.</h3>
+    				<p>Your Digital Profile is your CV. It has a unique URL linked to your Aadhaar ID.
+    				 You can access it anytime, anywhere, share it with anyone, set permissions. You can also add all other details to make
+    				 your profile complete.
+    				</p>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="container">
+    	<div class="row" style="margin:15px">
+    		<div class="col-md-10 col-md-offset-1 text-center">
+                    <h3><strong>Join us</strong> now and be a part of the Digital Revolution!</h3> 
+                    <a title="Register for free" class="btn btn-success btn-lg" href="#">
+                            Join for free
+                    </a>
+                    
+                    
+            </div>
+        </div>
+    </div>
+  <footer>      
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+                        <h4>Vidhya Aadhaar</h4>
+
+                        <nav>
+                            <ul class="footer-menu">
+                                <li>
+                                    <a title="Join us" href="/new-account">Join us</a>
+                                </li>
+                                <li>
+                                    <a title="Login" href="../login">Login</a>
+                                </li>
+                                <li>
+                                    <a title="Pricing" href="#">Recruiters</a>
+                                </li>
+                                 <li>
+                                    <a title="Pricing" href="#">Institutions</a>
+                                </li>
+                                <li>
+                                    <a title="Terms of Use" href="#">Terms of Use</a>
+                                </li>
+                                <li>
+                                    <a title="Privacy policy" href="#">Privacy policy</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+        </div>
+                    <!-- .column -->
+
+        <div class="col-md-3" style="border-right:solid 1px;">
+                        
+                        <h4>Support</h4>
+                
+                        <nav>
+                            <ul class="footer-menu">
+                                                                <li>
+                                    <a title="Forgot your password?" href="/forgotten-password">Forgot your password?</a>
+                                </li>
+                                <li>
+                                    <a title="FAQ" href="/faq">FAQ</a>
+                                </li>
+                                <li>
+                                    <a title="Report a problem" href="/contact">Report a problem</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <br>
+                         <h4>Follow us</h4>
+
+                        <ul class="footer-menu">
+                            <li>
+                                <a class="text-icon" href="#" title="Bitport on Facebook" target="_blank">
+                                    <span class="fa fa-facebook"></span>Vidya Aadhaar on Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-icon" href="#" title="Bitport on Twitter" target="_blank">
+                                    <span class="fa fa-twitter"></span>Vidya Aadhaar on Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a title="Contact" href="#">
+                                    Contact us
+                                </a>
+                            </li>
+                                   
+                        </ul>
+
+        </div>
+                    <!-- .column -->
+
+
+       
+                                        
+        <div class="col-md-6 text-center">
+                        
+                        <h4>Powered by</h4>
+                        <div class="footer-poweredby">
+							<a class="nic ext" target="_blank" href="http://www.nic.in" title="National Informatics Centre (NIC) (External Site that opens in a new window)"></a>
+							<a class="digitalindia ext" target="_blank" href="http://www.digitalindia.gov.in" title="Digital India (External Site that opens in a new window)"></a>
+							<a class="mygov ext" href="http://mygov.nic.in" target="_blank" title="My Gov (External Site that opens in a new window)"></a>
+							 <a class="npi ext" href="http://www.india.gov.in" target="_blank" title="National Portal of India (External Site that opens in a new window)"></a>
+							<a class="opengov ext" target="_blank" href="http://ogpl.gov.in" title="Open Gov Platform (External Site that opens in a new window)"></a>		     		
+						</div>           
+        </div>
+                                                   
+    </div>
+    <!-- row --> 
+    <div class="row" style="padding-top:48px">
+        <div class="col-md-12 text-center">
+            <div class="copyright">_ASBESTOS/VidyaAadhaar.webApp/beta/</div>
+        </div>
+    </div>
+</div>
+<!-- .container -->  
+</footer>
+  </body>
+  </html>

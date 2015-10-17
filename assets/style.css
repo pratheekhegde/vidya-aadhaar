@@ -1,0 +1,45 @@
+footer{
+    	padding-top:48px;
+    	;padding-bottom:48px;
+    	background-color:#151515;
+    }
+    footer h4{
+    	color:white;
+    }
+    .footer-menu{
+    	padding: 0;
+	    margin: 0;
+	    list-style-type: none;
+    }
+    .footer-poweredby a {
+	    background-image: url(https://data.gov.in/sites/all/themes/ogplv3light/images/footer/Horizontal-Icons.png);
+	    background-repeat: no-repeat;
+	    display: inline-block;
+	    height: 55px;
+	    margin: 20px;
+	}
+	.footer-poweredby a.nic {
+	    background-image: url(https://data.gov.in/sites/all/themes/ogplv3light/images/nic-logo.png);
+	    background-position: 0px 10px;
+	    width: 161px;
+	}
+	.footer-poweredby a.digitalindia {
+    	background-position: -38px -10px;
+    	width: 120px;
+	}
+	.footer-poweredby a.mygov {
+    	background-position: -213px -10px;
+    	width: 77px;
+	}
+	.footer-poweredby a.npi {
+    	background-position: -306px -10px;
+    	width: 90px;
+	}
+	.footer-poweredby a.opengov {
+    	background-position: -423px -10px;
+    	width: 146px;
+    	margin-right: 0px;
+	}
+	.copyright{
+		color:white;
+	}
