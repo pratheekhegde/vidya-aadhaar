@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/home_blur"
+    tools:context="com.myapp.ahm.vidhyaaadhar.Login">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/username"
+        android:ems="40"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="100dp"
+        android:hint="Aadhaar/College ID"
+        android:textColor="#868686"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="40"
+        android:id="@+id/password"
+        android:hint="Your password"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="100dp"
+         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:text="Login"
+        android:background="#00b200"
+        android:id="@+id/login" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User ID:"
+        android:id="@+id/textView"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="1dp"
+        android:textSize="20dp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:id="@+id/textView2"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="170dp"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+</RelativeLayout>
